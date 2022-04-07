@@ -1,43 +1,31 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+/*
+ * @Author: 周啟尧 zhouqy50@chinaunicom.cn
+ * @Date: 2022-04-07 17:19:27
+ * @LastEditTime: 2022-04-07 18:39:41
+ * @LastEditors: 周啟尧
+ * @Description: file content
+ */
+import { useMemo, useCallback, useEffect, useState } from 'react';
+import { Comp1 } from './components/Comp1/index';
+import { Comp2 } from './components/Comp2/index';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [n,setN] = useState(3)
+  const changeComp = () => {
+    setN(()=>{
+      return n+1
+    })
+  }
+  const m = useMemo(()=>{
+    return n % 3 + 1 
+  },[n])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div>
+      <p>n:{n}</p>
+      <p>m:{m}</p>
+      <button onClick={changeComp}> change </button>
+      {m === 1 && <Comp1 />}
+      {m === 2 && <Comp2 />}
     </div>
   )
 }
