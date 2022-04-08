@@ -6,13 +6,18 @@
  * @Description: file content
  */
 
-import { jsx,css } from '@emotion/react';
+import { jsx, css } from '@emotion/react';
 
 export function Comp4() {
   return (
-    <div css={{
-      color:'green',
-      fontSize: '1.5em'
-    }}> This is Comp4 -- emotion </div>
+    <div
+      css={{
+        color: 'green',
+        fontSize: '1.5em'
+      }}
+    >
+      {' '}
+      This is Comp4 -- emotion{' '}
+    </div>
   );
 }

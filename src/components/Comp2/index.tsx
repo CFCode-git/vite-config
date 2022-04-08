@@ -6,11 +6,8 @@
  * @Description: file content
  */
 
-import style from './index.module.scss'
+import style from './index.module.scss';
 
-export function Comp2(){
-  return (
-    <p className={style.comp2}>This is Comp2 -- css module</p>
-  )
+export function Comp2() {
+  return <p className={style.comp2}>This is Comp2 -- css module</p>;
 }
-

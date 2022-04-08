@@ -1,7 +1,7 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-07 17:19:27
- * @LastEditTime: 2022-04-08 07:42:58
+ * @LastEditTime: 2022-04-08 12:39:06
  * @LastEditors: 周啟尧
  * @Description: file content
  */
@@ -17,29 +17,29 @@ export default defineConfig({
   plugins: [
     react({
       babel: {
-        plugins: ['babel-plugin-styled-components', '@emotion/babel-plugin'],
+        plugins: ['babel-plugin-styled-components', '@emotion/babel-plugin']
       },
-      jsxImportSource: '@emotion/react',
+      jsxImportSource: '@emotion/react'
     }),
     windi()
   ],
   css: {
     modules: {
-      generateScopedName: '[name]__[local]__[hash:base64:5]',
+      generateScopedName: '[name]__[local]__[hash:base64:5]'
     },
     preprocessorOptions: {
       scss: {
         // 注入全局 scss
-        additionalData: `@import "${variablePath}";`,
-      },
+        additionalData: `@import "${variablePath}";`
+      }
     },
     postcss: {
       plugins: [
         autoprefixer({
           // 指定目标浏览器
-          overrideBrowserslist: ['Chrome > 40', 'ff > 31', 'ie 11'],
-        }),
-      ],
-    },
-  },
+          overrideBrowserslist: ['Chrome > 40', 'ff > 31', 'ie 11']
+        })
+      ]
+    }
+  }
 });
