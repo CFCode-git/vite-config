@@ -1,7 +1,7 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-07 17:19:27
- * @LastEditTime: 2022-04-08 12:39:06
+ * @LastEditTime: 2022-04-08 15:11:39
  * @LastEditors: 周啟尧
  * @Description: file content
  */
@@ -9,6 +9,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import windi from 'vite-plugin-windicss';
+import viteEslint from 'vite-plugin-eslint';
 const variablePath = resolve('./src/variable.scss');
 const autoprefixer = require('autoprefixer');
 
@@ -21,7 +22,8 @@ export default defineConfig({
       },
       jsxImportSource: '@emotion/react'
     }),
-    windi()
+    windi(),
+    viteEslint()
   ],
   css: {
     modules: {

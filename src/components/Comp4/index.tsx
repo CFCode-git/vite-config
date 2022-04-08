@@ -1,11 +1,12 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-07 22:38:36
- * @LastEditTime: 2022-04-08 07:44:47
+ * @LastEditTime: 2022-04-08 15:50:56
  * @LastEditors: 周啟尧
  * @Description: file content
  */
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jsx, css } from '@emotion/react';
 
 export function Comp4() {
@@ -16,8 +17,7 @@ export function Comp4() {
         fontSize: '1.5em'
       }}
     >
-      {' '}
-      This is Comp4 -- emotion{' '}
+      This is Comp4 -- emotion
     </div>
   );
 }
