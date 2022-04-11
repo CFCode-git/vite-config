@@ -11,11 +11,11 @@
     "postinstall": "husky install"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "npm run lint:script",
       "git add --force"
     ],
-    "**/*.scss": [
+    "**/*.{scss}": [
       "npm run lint:style",
       "git add --force"
     ]
