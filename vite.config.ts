@@ -1,7 +1,7 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-07 17:19:27
- * @LastEditTime: 2022-04-08 15:11:39
+ * @LastEditTime: 2022-04-11 09:02:23
  * @LastEditors: 周啟尧
  * @Description: file content
  */
@@ -42,6 +42,11 @@ export default defineConfig({
           overrideBrowserslist: ['Chrome > 40', 'ff > 31', 'ie 11']
         })
       ]
+    }
+  },
+  resolve: {
+    alias: {
+      '@assets': resolve(__dirname, 'src/assets')
     }
   }
 });
