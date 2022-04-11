@@ -1,7 +1,7 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-08 09:10:33
- * @LastEditTime: 2022-04-08 12:52:48
+ * @LastEditTime: 2022-04-11 07:52:46
  * @LastEditors: 周啟尧
  * @Description: file content
  */
@@ -37,5 +37,10 @@ module.exports = {
     semi: ['error', 'always'],
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-var-requires': 0
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 };
