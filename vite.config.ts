@@ -1,7 +1,7 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-07 17:19:27
- * @LastEditTime: 2022-04-11 10:34:11
+ * @LastEditTime: 2022-04-11 11:07:32
  * @LastEditors: 周啟尧
  * @Description: file content
  */
@@ -27,6 +27,9 @@ export default defineConfig({
     viteEslint(),
     svgr()
   ],
+  json: {
+    stringify: true
+  },
   css: {
     modules: {
       generateScopedName: '[name]__[local]__[hash:base64:5]'
