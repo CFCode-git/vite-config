@@ -1,7 +1,7 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-07 18:11:04
- * @LastEditTime: 2022-04-11 11:09:32
+ * @LastEditTime: 2022-04-11 11:17:02
  * @LastEditors: 周啟尧
  * @Description: file content
  */
@@ -11,6 +11,15 @@ import obj from '../../../package.json';
 import style from './index.module.scss';
 import logoSrc from '@assets/imgs/vite.png';
 import { ReactComponent as ReactLogo } from '@assets/icons/logo.svg';
+import Worker from './worker.js?worker';
+
+// 初始化 worker 实例
+const worker = new Worker();
+
+// 主线程监听 worker 信息
+worker.addEventListener('message', (e) => {
+  console.log(e);
+});
 
 export function Comp2() {
   useEffect(() => {
