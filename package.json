@@ -15,7 +15,7 @@
       "npm run lint:script",
       "git add --force"
     ],
-    "**/*.{scss}": [
+    "**/*.scss": [
       "npm run lint:style",
       "git add --force"
     ]
