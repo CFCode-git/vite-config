@@ -18,7 +18,7 @@ import viteImagemin from 'vite-plugin-imagemin';
 
 // 是否生产环境,如果是生产环境则使用CDN_URL
 const isProduction = process.env.NODE_ENV === 'production';
-const CDN_URL = 'xxxxxx';
+const CDN_URL = '/xxxxxx/';
 
 // https://vitejs.dev/config/
 export default defineConfig({
