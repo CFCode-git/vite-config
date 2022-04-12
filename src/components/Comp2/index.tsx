@@ -1,7 +1,7 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-07 18:11:04
- * @LastEditTime: 2022-04-11 11:17:02
+ * @LastEditTime: 2022-04-12 08:15:26
  * @LastEditors: 周啟尧
  * @Description: file content
  */
@@ -41,6 +41,13 @@ export function Comp2() {
       <div>
         <span>引入svg</span>
         <ReactLogo />
+      </div>
+      <div>
+        <span>测试环境变量</span>
+        <img
+          src={new URL('./logo.png', import.meta.env.VITE_IMG_BASE_URL).href}
+          alt=""
+        />
       </div>
     </div>
   );
