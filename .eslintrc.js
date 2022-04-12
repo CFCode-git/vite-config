@@ -1,7 +1,7 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-08 09:10:33
- * @LastEditTime: 2022-04-11 07:52:46
+ * @LastEditTime: 2022-04-12 09:01:57
  * @LastEditors: 周啟尧
  * @Description: file content
  */
@@ -30,6 +30,7 @@ module.exports = {
   },
   // 2. 接入 prettier 的 eslint 插件
   plugins: ['react', '@typescript-eslint', 'prettier'],
+  ignorePatterns: ['dist'],
   rules: {
     // 3. 开启 prettier 自动修复功能
     'prettier/prettier': 'error',
