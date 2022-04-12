@@ -1,7 +1,7 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-07 17:19:27
- * @LastEditTime: 2022-04-11 18:46:35
+ * @LastEditTime: 2022-04-12 14:17:16
  * @LastEditors: 周啟尧
  * @Description: file content
  */
@@ -14,6 +14,7 @@ import viteEslint from 'vite-plugin-eslint';
 const variablePath = resolve('./src/variable.scss');
 const autoprefixer = require('autoprefixer');
 import svgr from 'vite-plugin-svgr';
+import viteImagemin from 'vite-plugin-imagemin';
 
 // 是否生产环境,如果是生产环境则使用CDN_URL
 const isProduction = process.env.NODE_ENV === 'production';
@@ -31,7 +32,29 @@ export default defineConfig({
     }),
     windi(),
     viteEslint(),
-    svgr()
+    svgr(),
+    viteImagemin({
+      // 无损压缩配置
+      optipng: {
+        optimizationLevel: 7
+      },
+      // 有损压缩配置
+      pngquant: {
+        quality: [0.8, 0.9]
+      },
+      // svg 优化
+      svgo: {
+        plugins: [
+          {
+            name: 'removeViewBox'
+          },
+          {
+            name: 'removeEmptyAttrs',
+            active: false
+          }
+        ]
+      }
+    })
   ],
   json: {
     stringify: true
