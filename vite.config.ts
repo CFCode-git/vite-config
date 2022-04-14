@@ -1,11 +1,12 @@
 /*
  * @Author: 周啟尧 zhouqy50@chinaunicom.cn
  * @Date: 2022-04-07 17:19:27
- * @LastEditTime: 2022-04-12 14:17:16
+ * @LastEditTime: 2022-04-13 14:58:13
  * @LastEditors: 周啟尧
  * @Description: file content
  */
 
+import path from 'path';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -15,6 +16,7 @@ const variablePath = resolve('./src/variable.scss');
 const autoprefixer = require('autoprefixer');
 import svgr from 'vite-plugin-svgr';
 import viteImagemin from 'vite-plugin-imagemin';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 // 是否生产环境,如果是生产环境则使用CDN_URL
 const isProduction = process.env.NODE_ENV === 'production';
@@ -54,6 +56,9 @@ export default defineConfig({
           }
         ]
       }
+    }),
+    createSvgIconsPlugin({
+      iconDirs: [path.join(__dirname, 'src/assets/icons')]
     })
   ],
   json: {
